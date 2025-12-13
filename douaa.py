@@ -32,3 +32,19 @@ print("\nLes informations ont été sauvegardées dans 'sequences.csv'")
 # Sauvegarder les séquences longues dans un fichier CSV séparé
 seq_longues.to_csv('sequences_longues.csv', index=False)
 print("Les séquences de longueur > 10 ont été sauvegardées dans 'sequences_longues.csv'")
+# Question 4 : Pourcentage moyen de GC
+moy_gc = df["Pourcentage GC"].mean()
+print(format(moy_gc, ".3f"))
+
+# Question 5 : Catégorie GC
+def categorie_gc(gc):
+    if gc > 55:
+        return "Riche"
+    elif 45 <= gc <= 55:
+        return "Moyen"
+    else:
+        return "Faible"
+
+df["Catégorie GC"] = df["Pourcentage GC"].apply(categorie_gc)
+print(df)
+           
