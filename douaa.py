@@ -28,3 +28,7 @@ print(seq_longues)
 # Sauvegarder le DataFrame dans un fichier CSV
 df.to_csv('sequences.csv', index=False)
 print("\nLes informations ont été sauvegardées dans 'sequences.csv'")
+
+# Sauvegarder les séquences longues dans un fichier CSV séparé
+seq_longues.to_csv('sequences_longues.csv', index=False)
+print("Les séquences de longueur > 10 ont été sauvegardées dans 'sequences_longues.csv'")
