@@ -47,4 +47,19 @@ def categorie_gc(gc):
 
 df["Catégorie GC"] = df["Pourcentage GC"].apply(categorie_gc)
 print(df)
-           
+        
+    
+
+# Question 6 : Nombre de G dans chaque séquence
+df["Nombre de G"] = df["Séquence"].apply(lambda x: x.count("G"))
+print(df)
+# Question 7 : Écart-type
+ecart_gc = df["Pourcentage GC"].std()
+ecart_longueur = df["Longueur"].std()
+
+print("Écart-type du %GC :", format(ecart_gc, ".3f"))
+print("Écart-type de la longueur :", format(ecart_longueur, ".3f"))
+# Question 8 : Sauvegarde en CSV
+df.to_csv("tableau_sequences_adn.csv", index=False)
+print("Fichier CSV sauvegardé avec succès")
+    
